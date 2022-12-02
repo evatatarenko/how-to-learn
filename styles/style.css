@@ -58,7 +58,7 @@
 }
 
 .header__title {
-  width: 730px;
+  max-width: 730px;
   margin: auto 64px;
   font-size: 102px;
   line-height: 96px;
@@ -69,7 +69,7 @@
 
 .header__subtitle {
   position: absolute;
-  width: 388px;
+  max-width: 388px;
   left: 64px;
   bottom: 30px;
   font-size: 18px;
@@ -91,7 +91,6 @@
   display: flex;
   justify-content: center;
   padding-top: 100px;
-  padding-bottom: 100px;
 }
 
 /* Gallery - Two columns */
@@ -178,6 +177,7 @@
 .table__cell {
   width: 250px;
   margin-top: 60px;
+  z-index: 2;
 }
 
 .table__cell_theme_dark {
@@ -193,6 +193,7 @@
   font-weight: 600;
   margin: 0 0;
   display: block;
+  z-index: 2;
 }
 
 .table__text {
@@ -204,6 +205,7 @@
   font-size: 18px;
   font-weight: normal;
   display: block;
+  z-index: 2;
 }
 
 /* Gallery - Feynman */
@@ -215,12 +217,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 890px;
+  min-height: 890px;
   position: relative;
+  box-sizing: border-box;
+  background-image: url('../images/feynman.png');
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 867px 637px;
 }
 
 .feynman__title {
-  width: 648px;
+  max-width: 648px;
   text-align: center;
   line-height: 1.15;
   font-size: 120px;
@@ -255,14 +262,6 @@
   text-decoration: none;
 }
 
-.feynman__illustration {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 867px;
-  height: 637px;
-}
-
 /* Gallery - Kaufman */
 
 .kaufman {
@@ -282,6 +281,9 @@
   height: 877px;
   right: -210px;
   top: 0;
+  background-image: url('../images/kaufman-triangle.svg');
+  background-repeat: no-repeat;
+  z-index: 0;
 }
 
 .section-title_theme_dark {
@@ -294,7 +296,7 @@
 
 /* Footer */
 
-footer {
+.footer {
   min-height: 350px;
   background-color: #1f1f1f;
   color: white;
@@ -303,6 +305,7 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 .footer__columns {
@@ -310,6 +313,7 @@ footer {
   flex-direction: row;
   justify-content: space-between;
   width: 90%;
+  box-sizing: content-box;
 }
 
 .footer__column_content_copyright {
@@ -336,7 +340,6 @@ footer {
   line-height: 30px;
   font-size: 18px;
   font-weight: normal;
-  margin-top: 10px;
   display: block;
   text-decoration: none;
 }
@@ -347,4 +350,9 @@ footer {
   font-weight: 600;
   margin: 0;
   display: block;
+}
+.footer__social-icon{
+  margin-right: 10px;
+  height:16px;
+  width:16px;
 }
