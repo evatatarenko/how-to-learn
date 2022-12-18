@@ -10,3 +10,7 @@
   display: block;
   text-decoration: none;
 }
+
+.feynman__link:hover{
+  opacity: 70%;
+}
